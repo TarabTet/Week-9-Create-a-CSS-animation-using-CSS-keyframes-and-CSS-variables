@@ -1,0 +1,173 @@
+html {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+
+body {
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #333;
+  background-color: var(--main-bg-color);
+  color: var(--main-tx-color);
+  font-family: var(--main-ft-family);
+  animation: color-me-in 10s;
+}
+
+@keyframes color-me-in {
+  0% {
+    background: orange;
+  }
+  25% {
+    background: rgb(32, 212, 19);
+  }
+  75% {
+    background: rgb(64, 19, 212);
+  }
+  100% {
+    background: rgb(188, 206, 230);
+  }
+}
+
+
+.move-me {
+  display: inline-block;
+  padding: 20px;
+  color: white;
+  position: relative;
+  margin: 0 0 10px 0;
+}
+.move-me-1 {
+  animation: move-in-steps 5s steps(4) infinite;
+}
+.move-me-2 {
+  animation: move-in-steps 8s steps(4, start) infinite;
+}
+.move-me-3 {
+  animation: move-in-steps 12s infinite;
+}
+
+
+@keyframes move-in-steps {
+  0% {
+    left: 0;
+    background: rgb(157, 255, 0);
+  }
+  25% {
+    left: 20;
+    background: blue;
+  }
+  77% {
+    left: 60;
+    background: rgb(240, 95, 11);
+  }
+  100% {
+    left: 80%;
+    background: red;
+  }
+}
+
+.box{
+  width: 100px;
+  height: 350px;
+  transition: all 1s;
+}
+
+
+.box{
+  --box-bg-color: rgb(13, 205, 219);
+  --box-main-color: #6b3e1c;
+  --box-padding: 5px 10px;
+  --box-shadow-h-offset: 10px;
+  --box-shadow-v-offset: 5px;
+  --box-shadow-blur: 15px;
+}
+
+
+.box{
+  background-color: var(--box-bg-color);
+  border: 2px solid var(--box-main-color);
+  padding: var(--box-padding);
+  box-shadow: 
+    var(--box-shadow-h-offset)
+    var(--box-shadow-v-offset)
+    var(--box-shadow-blur);
+}
+
+
+.box h1{
+  color: var(--box-main-color);
+}
+.box p{
+  --box-main-color: #500b1c;
+  color: var(--box-main-color);
+}
+
+.box:hover {
+  width: 300px;
+  background-color: rgb(183, 255, 0);
+}
+
+
+:root{
+  --main-bg-color: #cccccc;
+  --main-tx-color: #333;
+  --main-ft-family: sans-serif;
+  --main-container-width: 90%;
+  --header-bg-color: #333;
+  --gap: 20px;
+}
+
+
+.container{
+  width: var(--main-container-width);
+  margin: 0 auto;
+}
+header{
+  background-color: var(--header-bg-color);
+  color: #fff;
+  padding: 8px;
+}
+header h1{
+  margin: 0;
+  padding: 0;
+}
+
+.grid{
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: var(--gap);
+  grid-auto-rows: 1fr;
+  
+}
+
+.circle{
+  width:50px;
+  height:50px;
+  background:cyan;
+  border-radius:50%;
+  position:absolute;
+  top:0; bottom:0; left:0;right:0;
+  overflow:hidden;
+  margin:auto;
+  animation: circle 6s linear infinite;
+}
+
+@keyframes circle{
+  0%{
+    transform:rotate(0deg)
+              translate(-165px)
+              rotate(0deg);
+  
+  }
+  100%{
+    transform:rotate(360deg)
+              translate(-165px)
+              rotate(-360deg);
+  }
+}
+
